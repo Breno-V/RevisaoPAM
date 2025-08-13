@@ -1,8 +1,8 @@
 import { Text, View, Image, TouchableOpacity } from 'react-native';
-import Header from './components/Header'
+import Header from '../../components/Header'
 import styles from './telaLoginStyle';
 
-export default function TelaLogin() {
+export default function TelaLogin({ navigation }) {
     return (
         <View style={styles.container}>
 
@@ -10,7 +10,7 @@ export default function TelaLogin() {
 
             <View style={styles.containerImage}>
                 <Image
-                    source={require('../assets/images/casual_dog.png')}
+                    source={require('../../../assets/images/casual_dog.png')}
                     style={styles.imageDog}
                     alt='a woman with her dog'
                 />
@@ -20,9 +20,9 @@ export default function TelaLogin() {
             <Text style={styles.subtitle}>Como deseja acessar?</Text>
 
 
-            <TouchableOpacity style={styles.buttonG}>
+            <TouchableOpacity style={styles.buttonG} onPress={() => navigation.navigate('Home')}>
                 <Image
-                    source={require('../assets/images/Google.png')}
+                    source={require('../../../assets/images/Google.png')}
                     style={styles.iconGoogle}
                 />
                 <Text style={styles.BGText}>Como deseja acessar?
@@ -30,7 +30,7 @@ export default function TelaLogin() {
                 </Text>
             </TouchableOpacity>
 
-            <TouchableOpacity style={styles.buttonOther}>
+            <TouchableOpacity style={styles.buttonOther} onPress={() => navigation.navigate('OutrasOpcoes')}>
                 <Text style={styles.BOText}>Outras opções</Text>
             </TouchableOpacity>
 
