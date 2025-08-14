@@ -1,5 +1,4 @@
-import { StyleSheet, Dimensions } from "react-native";
-const { width } = Dimensions.get('window')
+import { StyleSheet } from "react-native"
 
 const styles = StyleSheet.create({
   container: {
@@ -24,8 +23,26 @@ const styles = StyleSheet.create({
 
   inputBlock: {
     margin: 10,
-    width: width * 0.95,
-    height: 50,
+
+  },
+
+  icon: {
+    width: 24,
+    height: 24,
+    marginLeft: 5
+  },
+
+  passwordContainer: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    backgroundColor: '#CCE5FF',
+    borderRadius: 5,
+    paddingHorizontal: 10
+  },
+
+  password: {
+    flex: 1,
+    paddingVertical: 10
   },
 
   input: {
@@ -33,7 +50,8 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     backgroundColor: '#CCE5FF',
     textDecorationColor: '#000000',
-  },   
+    paddingVertical: 10
+  },
 });
 
 export default styles;
