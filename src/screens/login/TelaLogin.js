@@ -1,5 +1,5 @@
 import { Text, View, Image, TouchableOpacity } from 'react-native';
-import Header from '../../components/Header'
+import Header from '../../components/Header/Header'
 import styles from './telaLoginStyle';
 
 export default function TelaLogin({ navigation }) {

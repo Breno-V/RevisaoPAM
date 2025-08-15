@@ -6,6 +6,10 @@ const styles = StyleSheet.create({
     backgroundColor: '#eaeced',
   },
 
+  text: {
+    marginLeft: 10,
+  },
+
   title: {
     textAlign: 'center',
     justifyContent: 'center',
@@ -52,6 +56,55 @@ const styles = StyleSheet.create({
     textDecorationColor: '#000000',
     paddingVertical: 10
   },
+
+  Checkbox: {
+    flex: 1,
+    flexDirection: 'row',
+    justifyContent: 'flex-start',
+    marginLeft: 10
+  },
+
+  buttonEntry: {
+    flexDirection: 'row',
+    justifyContent: 'center',
+    alignItems: 'center',
+    height: 60,
+    width: 170,
+    backgroundColor: '#28a751',
+    borderRadius: 3,
+  },
+
+  buttonOther: {
+    justifyContent: 'center',
+    alignItems: 'center',
+    height: 60,
+    width: 170,
+    backgroundColor: '#ffffff',
+    borderRadius: 3,
+    borderColor: '#43d38d',
+    borderWidth: 1,
+  },
+
+  containerButton: {
+    flexDirection: 'row',
+    justifyContent: 'space-evenly',
+    marginBottom: 100,
+  },
+
+  dividingLine: {
+    height: 1,
+    backgroundColor: '#000000',
+    marginVertical: 10,
+    marginHorizontal: 50,
+    marginBottom: 30,
+    justifyContent: 'space-evenly'
+  },
+
+  containerImage: {
+    flexDirection: 'row',
+    justifyContent: 'space-evenly',
+    marginBottom: 170,
+  }
 });
 
 export default styles;
