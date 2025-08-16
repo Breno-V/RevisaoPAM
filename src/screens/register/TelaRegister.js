@@ -1,18 +1,34 @@
-import { useState } from 'react';
-import { Text, View, TextInput, TouchableOpacity, Image } from "react-native";
-import styles from './TelaOPStyle';
+import { Text, TextInput, View, Image, TouchableOpacity, Alert} from 'react-native';
+import { useState, useEffect } from 'react';
 import Header from '../../components/Header/Header';
-import Checkbox from 'expo-checkbox';
-export default function TelaOP({navigation}) {
+import styles from './telaRegisterStyle';
+
+export default function TelaHome() {
     const [senha, setSenha] = useState('');
+    const [confirmarSenha, setConfirmarSenha] = useState('');
     const [oculto, setOculto] = useState(true);
-    const [marcado, setMarcado] = useState(false);
+    const [confirmarOculto, setConfirmarOculto] = useState(true);
+
+    useEffect(() => {
+        // Só verifica as senhas se ambas estão preenchidas
+        if (senha && confirmarSenha) {
+            const timer = setTimeout(() => {
+                if (senha !== confirmarSenha) {
+                    Alert.alert('Erro', 'As senhas não coincidem.');
+                }
+            }, 500); // Espera 1/2 segundo após parar de digitar
+
+            return () => {
+                clearTimeout(timer);
+            }
+        }
+    }, [senha, confirmarSenha]);
 
     return (
         <View style={styles.container}>
             <Header />
             <View style={styles.titleBlock}>
-                <Text style={styles.title}>Acesse</Text>
+                <Text style={styles.title}>Cadastre-se</Text>
             </View>
 
             <View style={styles.inputBlock}>
@@ -31,7 +47,7 @@ export default function TelaOP({navigation}) {
                         value={senha}
                         onChangeText={setSenha}
                         secureTextEntry={oculto}
-                        placeholder='digite sua senha'
+                        placeholder='insira sua senha'
                     />
                     <TouchableOpacity onPress={() => setOculto(!oculto)}>
                         <Image
@@ -43,22 +59,29 @@ export default function TelaOP({navigation}) {
                 </View>
             </View>
 
-            <View style={styles.Checkbox}>
-                <Checkbox
-                    value={marcado}
-                    onValueChange={setMarcado}
-                    color={marcado ? '#4630EB' : undefined}
-                />
-                <Text style={styles.text}>Concordo com os Termos de Serviço</Text>
+            <View style={styles.inputBlock}>
+                <Text style={{ margin: 5 }}>Confirmar senha</Text>
+                <View style={styles.passwordContainer}>
+                    <TextInput
+                        style={styles.password}
+                        value={confirmarSenha}
+                        onChangeText={setConfirmarSenha}
+                        secureTextEntry={confirmarOculto}
+                        placeholder='confirme sua senha'
+                    />
+                    <TouchableOpacity onPress={() => setConfirmarOculto(!confirmarOculto)}>
+                        <Image
+                            source={confirmarOculto ? require('../../../assets/images/eye-open.png') : require('../../../assets/images/eye-closed.png')}
+                            style={styles.icon}
+                        />
+
+                    </TouchableOpacity>
+                </View>
             </View>
 
             <View style={styles.containerButton}>
                 <TouchableOpacity style={styles.buttonEntry}>
                     <Text style={{ color: '#ffffff' }}>Entre</Text>
-                </TouchableOpacity>
-
-                <TouchableOpacity style={styles.buttonOther} onPress={() => navigation.navigate('Register')}>
-                    <Text style={{ color: '#000000' }}>Cadastre-se</Text>
                 </TouchableOpacity>
             </View>
 
@@ -69,6 +92,7 @@ export default function TelaOP({navigation}) {
 
                 <View style={styles.dividingLine} />
             </View>
+
             <View style={styles.containerImage}>
                 <TouchableOpacity>
                     <Image
@@ -81,6 +105,7 @@ export default function TelaOP({navigation}) {
                     />
                 </TouchableOpacity>
             </View>
+
         </View>
     )
 }

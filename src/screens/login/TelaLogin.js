@@ -20,7 +20,7 @@ export default function TelaLogin({ navigation }) {
             <Text style={styles.subtitle}>Como deseja acessar?</Text>
 
 
-            <TouchableOpacity style={styles.buttonG} onPress={() => navigation.navigate('Home')}>
+            <TouchableOpacity style={styles.buttonG}>
                 <Image
                     source={require('../../../assets/images/Google.png')}
                     style={styles.iconGoogle}

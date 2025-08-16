@@ -1,13 +1,9 @@
-import { StyleSheet } from "react-native"
+import { StyleSheet } from "react-native";
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#eaeced',
-  },
-
-  text: {
-    marginLeft: 10,
   },
 
   title: {
@@ -27,13 +23,30 @@ const styles = StyleSheet.create({
 
   inputBlock: {
     margin: 10,
-
   },
 
-  icon: {
-    width: 24,
-    height: 24,
-    marginLeft: 5
+  input: {
+    flexDirection: 'row',
+    justifyContent: 'flex-start',
+    alignItems: 'center',
+    backgroundColor: '#CCE5FF',
+    textDecorationColor: '#000000',
+    paddingHorizontal: 10,
+    borderRadius: 5,
+  },
+
+  inputError: {
+    flexDirection: 'row',
+    justifyContent: 'flex-start',
+    alignItems: 'center',
+    backgroundColor: '#CCE5FF',
+    textDecorationColor: '#f07272ff',
+    paddingHorizontal: 10,
+    borderRadius: 5,
+  },
+
+  password: {
+    flex: 1,
   },
 
   passwordContainer: {
@@ -44,24 +57,10 @@ const styles = StyleSheet.create({
     paddingHorizontal: 10
   },
 
-  password: {
-    flex: 1,
-  },
-
-  input: {
-    justifyContent: 'flex-start',
-    alignItems: 'center',
-    backgroundColor: '#CCE5FF',
-    textDecorationColor: '#000000',
-    paddingHorizontal: 10,
-  },
-
-  Checkbox: {
-    flex: 1,
-    flexDirection: 'row',
-    justifyContent: 'flex-start',
-    margin: 10
-
+  icon: {
+    width: 24,
+    height: 24,
+    marginLeft: 5
   },
 
   buttonEntry: {
@@ -69,26 +68,16 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     height: 60,
-    width: 170,
+    width: 350,
     backgroundColor: '#2cb859',
     borderRadius: 3,
-  },
-
-  buttonOther: {
-    justifyContent: 'center',
-    alignItems: 'center',
-    height: 60,
-    width: 170,
-    backgroundColor: '#ffffff',
-    borderRadius: 3,
-    borderColor: '#43d38d',
-    borderWidth: 1,
   },
 
   containerButton: {
     flexDirection: 'row',
     justifyContent: 'space-evenly',
-    marginBottom: 100,
+    marginTop: 70,
+    marginBottom: 30,
   },
 
   dividingLine: {
@@ -101,8 +90,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     marginVertical: 20,
-    marginHorizontal: 50,
-    marginTop: -50,
+    marginHorizontal: 50
   },
 
   textLine: {
@@ -115,8 +103,9 @@ const styles = StyleSheet.create({
   containerImage: {
     flexDirection: 'row',
     justifyContent: 'space-evenly',
-    marginBottom: 230,
+    marginBottom: 170,
   }
+
 });
 
 export default styles;
