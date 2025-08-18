@@ -54,20 +54,5 @@ This project was created for **study purposes**:
 
 ---
 
-## 📸 Preview
-
-<table cellspacing="200" align="center">
-  <tr>
-    <td align="center"">
-      <p>1. This is my <code>Model</code></p>
-      <img width="250" height="537" alt="Model Image" src="https://github.com/user-attachments/assets/a17ab628-86a1-4488-a2bb-4f9fbc97ee65" />
-    </td>
-    <td align="center"">
-      <p>2. This is my <code>replica</code></p>
-      <img width="250" height="537" alt="Replica Image" src="https://github.com/user-attachments/assets/379850ba-7781-47ea-9255-51b4fdacf5b8" />
-    </td>
-  </tr>
-</table>
-
 ## 📄 License
 This project is for educational purposes only.
