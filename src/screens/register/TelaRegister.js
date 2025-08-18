@@ -3,8 +3,9 @@ import { useState, useEffect } from 'react';
 import Header from '../../components/Header/Header';
 import styles from './telaRegisterStyle';
 
-export default function TelaHome() {
+export default function TelaHome({ navigation }) {
     const [senha, setSenha] = useState('');
+    const [email, setEmail] = useState('');
     const [confirmarSenha, setConfirmarSenha] = useState('');
     const [oculto, setOculto] = useState(true);
     const [confirmarOculto, setConfirmarOculto] = useState(true);
@@ -14,15 +15,33 @@ export default function TelaHome() {
         if (senha && confirmarSenha) {
             const timer = setTimeout(() => {
                 if (senha !== confirmarSenha) {
+
                     Alert.alert('Erro', 'As senhas não coincidem.');
                 }
-            }, 500); // Espera 1/2 segundo após parar de digitar
+            }, 1000); // Espera 1/2 segundo após parar de digitar
 
             return () => {
                 clearTimeout(timer);
             }
         }
     }, [senha, confirmarSenha]);
+
+    function handleContinuar() {
+    // Verifica campos vazios
+    if (!email.trim() || !senha.trim() || !confirmarSenha.trim()) {
+        Alert.alert("Preencha todos os campos", "Insira os valores necessários para prosseguir.");
+        return;
+    }
+
+    // Verifica se as senhas coincidem
+    if (senha !== confirmarSenha) {
+        Alert.alert("Erro", "As senhas não coincidem.");
+        return;
+    }
+
+    // Tudo certo → navega
+    navigation.navigate('Nome');
+}
 
     return (
         <View style={styles.container}>
@@ -36,7 +55,8 @@ export default function TelaHome() {
                 <TextInput
                     style={styles.input}
                     placeholder='digite seu email'
-                />
+                    value={email}
+                    onChangeText={setEmail}                />
             </View>
 
             <View style={styles.inputBlock}>
@@ -80,7 +100,7 @@ export default function TelaHome() {
             </View>
 
             <View style={styles.containerButton}>
-                <TouchableOpacity style={styles.buttonEntry}>
+                <TouchableOpacity style={styles.buttonEntry} onPress={handleContinuar}>
                     <Text style={{ color: '#ffffff' }}>Entre</Text>
                 </TouchableOpacity>
             </View>

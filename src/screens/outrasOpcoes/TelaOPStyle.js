@@ -54,6 +54,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#CCE5FF',
     textDecorationColor: '#000000',
     paddingHorizontal: 10,
+    borderRadius: 7,
   },
 
   Checkbox: {
