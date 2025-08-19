@@ -1,6 +1,6 @@
-# 📱 React Native Login Screen
+# 📱 React Native application
 
-This project is a **login screen** built with [React Native](https://reactnative.dev/), developed as part of a guided exercise.  
+This project is a **login screen** with a **register screen** built with [React Native](https://reactnative.dev/), developed as part of a guided exercise.  
 It follows a **provided template** and **support materials**, allowing me to focus on practicing **mobile UI design** and **React Native fundamentals**.
 
 ---
@@ -8,6 +8,7 @@ It follows a **provided template** and **support materials**, allowing me to foc
 ## 🚀 Features
 
 - 📌 Simple login layout
+- 📌 An register screen
 - 📌 Styled using React Native's `StyleSheet`
 
 ---
