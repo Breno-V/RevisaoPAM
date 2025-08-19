@@ -1,8 +1,11 @@
-import { Text, View, Image, TouchableOpacity } from 'react-native';
+import { Text, View, Image, TouchableOpacity, Alert } from 'react-native';
 import Header from '../../components/Header/Header'
 import styles from './telaLoginStyle';
 
 export default function TelaLogin({ navigation }) {
+    function handleGoogleLogin () {
+        Alert.alert('Login com Google', 'Funcionalidade ainda não implementada.');
+    };
     return (
         <View style={styles.container}>
 
@@ -20,7 +23,7 @@ export default function TelaLogin({ navigation }) {
             <Text style={styles.subtitle}>Como deseja acessar?</Text>
 
 
-            <TouchableOpacity style={styles.buttonG}>
+            <TouchableOpacity style={styles.buttonG} onPress={handleGoogleLogin}>
                 <Image
                     source={require('../../../assets/images/Google.png')}
                     style={styles.iconGoogle}

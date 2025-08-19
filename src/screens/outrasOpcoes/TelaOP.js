@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Text, View, TextInput, TouchableOpacity, Image } from "react-native";
+import { Text, View, TextInput, TouchableOpacity, Image, Alert } from "react-native";
 import styles from './TelaOPStyle';
 import Header from '../../components/Header/Header';
 import Checkbox from 'expo-checkbox';
@@ -7,6 +7,9 @@ export default function TelaOP({navigation}) {
     const [senha, setSenha] = useState('');
     const [oculto, setOculto] = useState(true);
     const [marcado, setMarcado] = useState(false);
+    function handleSocialLogin () {
+        Alert.alert('Login inválido!', 'Funcionalidade ainda não implementada.');
+    };
 
     return (
         <View style={styles.container}>
@@ -70,12 +73,12 @@ export default function TelaOP({navigation}) {
                 <View style={styles.dividingLine} />
             </View>
             <View style={styles.containerImage}>
-                <TouchableOpacity>
+                <TouchableOpacity onPress={handleSocialLogin}>
                     <Image
                         source={require('../../../assets/images/Google.png')}
                     />
                 </TouchableOpacity>
-                <TouchableOpacity>
+                <TouchableOpacity onPress={handleSocialLogin}>
                     <Image
                         source={require('../../../assets/images/Facebook.png')}
                     />

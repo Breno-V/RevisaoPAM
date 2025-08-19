@@ -10,6 +10,10 @@ export default function TelaHome({ navigation }) {
     const [oculto, setOculto] = useState(true);
     const [confirmarOculto, setConfirmarOculto] = useState(true);
 
+    function handleSocialLogin () {
+        Alert.alert('Login inválido!', 'Funcionalidade ainda não implementada.');
+    };
+
     useEffect(() => {
         // Só verifica as senhas se ambas estão preenchidas
         if (senha && confirmarSenha) {
@@ -114,12 +118,12 @@ export default function TelaHome({ navigation }) {
             </View>
 
             <View style={styles.containerImage}>
-                <TouchableOpacity>
+                <TouchableOpacity onPress={handleSocialLogin}>
                     <Image
                         source={require('../../../assets/images/Google.png')}
                     />
                 </TouchableOpacity>
-                <TouchableOpacity>
+                <TouchableOpacity onPress={handleSocialLogin}>
                     <Image
                         source={require('../../../assets/images/Facebook.png')}
                     />
