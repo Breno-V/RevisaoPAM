@@ -56,7 +56,7 @@ export default function TelaOP({navigation}) {
             </View>
 
             <View style={styles.containerButton}>
-                <TouchableOpacity style={styles.buttonEntry}>
+                <TouchableOpacity style={styles.buttonEntry} onPress={handleSocialLogin}>
                     <Text style={{ color: '#ffffff' }}>Entre</Text>
                 </TouchableOpacity>
 

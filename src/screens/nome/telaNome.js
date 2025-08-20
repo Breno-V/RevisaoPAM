@@ -9,6 +9,7 @@ export default function TelaNome({ navigation }) {
     function handleContinuar() {
         if(!nome.trim()){
             Alert.alert("Nome não preenchido!", "Por favor, preencha o campo do seu nome.")
+            return;
         }
         navigation.navigate('Nascimento')
     }
